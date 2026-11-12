@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ПРО СТО АВТО — автосервіс у Чернівцях</title>
+<meta name="description" content="СТО у Чернівцях: розвал-сходження 3D, шиномонтаж, заправка кондиціонерів, ремонт двигуна та турбін. вул. Південно-Кільцева, 2а.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1012; --bg2:#17191c; --card:#1d2024; --line:#2a2e33;
+  --text:#eef0f2; --muted:#9aa1a9; --accent:#ffc61a; --accent-ink:#141414;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Unbounded,sans-serif;line-height:1.1;letter-spacing:-.01em}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:12px;font-weight:700;font-size:16px;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-ghost{border:1.5px solid var(--line);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{border-color:var(--accent)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(15,16,18,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:Unbounded;font-weight:800;font-size:19px;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:8px;background:var(--accent);display:grid;place-items:center;color:#111;font-style:normal;font-size:15px}
+.nav ul{display:flex;gap:28px;list-style:none;font-weight:600;color:var(--muted)}
+.nav ul a:hover{color:var(--text)}
+.nav .phone{font-weight:700;color:var(--accent)}
+@media(max-width:860px){.nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,16,18,.35) 0%,rgba(15,16,18,.55) 45%,var(--bg) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:70px;width:100%}
+.tag{display:inline-flex;gap:8px;align-items:center;background:rgba(255,198,26,.14);color:var(--accent);border:1px solid rgba(255,198,26,.35);padding:7px 14px;border-radius:99px;font-weight:700;font-size:14px;margin-bottom:22px}
+.hero h1{font-size:clamp(36px,6.4vw,76px);max-width:900px;margin-bottom:20px}
+.hero h1 span{color:var(--accent)}
+.hero p{font-size:clamp(16px,1.6vw,20px);color:#cfd3d8;max-width:620px;margin-bottom:34px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:-30px;position:relative;z-index:3}
+.stat{background:var(--bg2);padding:26px 22px}
+.stat b{font-family:Unbounded;font-size:30px;color:var(--accent);display:block}
+.stat span{color:var(--muted);font-size:14px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+section{padding:100px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:46px;flex-wrap:wrap}
+.head h2{font-size:clamp(28px,4vw,46px);max-width:620px}
+.head p{color:var(--muted);max-width:400px}
+.kicker{color:var(--accent);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.svc:hover{border-color:rgba(255,198,26,.55);transform:translateY(-4px)}
+.svc .ph{aspect-ratio:16/10;overflow:hidden}
+.svc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.svc:hover .ph img{transform:scale(1.05)}
+.svc .tx{padding:22px 22px 24px}
+.svc h3{font-size:19px;margin-bottom:10px}
+.svc p{color:var(--muted);font-size:15px}
+.svc ul{list-style:none;margin-top:14px;display:grid;gap:6px;font-size:14px}
+.svc li::before{content:"— ";color:var(--accent)}
+@media(max-width:960px){.services{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.services{grid-template-columns:1fr}}
+
+/* why */
+.why{background:var(--bg2)}
+.why-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.why-img{border-radius:20px;overflow:hidden;aspect-ratio:4/3.4}
+.why-img img{width:100%;height:100%;object-fit:cover}
+.points{display:grid;gap:22px;margin-top:30px}
+.pt{display:flex;gap:16px}
+.pt i{flex:none;width:44px;height:44px;border-radius:12px;background:rgba(255,198,26,.12);color:var(--accent);display:grid;place-items:center;font-style:normal;font-weight:800}
+.pt h3{font-family:Manrope;font-size:17px;margin-bottom:3px}
+.pt p{color:var(--muted);font-size:15px}
+@media(max-width:860px){.why-grid{grid-template-columns:1fr}}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:14px;cursor:zoom-in}
+.gallery .tall{grid-row:span 2}
+.gallery .wide{grid-column:span 2}
+@media(max-width:860px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;place-items:center;z-index:50;padding:20px;cursor:zoom-out}
+.lb.on{display:grid}
+.lb img{max-height:90vh;border-radius:12px}
+
+/* review */
+.review{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:44px}
+.score b{font-family:Unbounded;font-size:72px;color:var(--accent);line-height:1}
+.score div{color:var(--accent);font-size:22px;letter-spacing:3px;margin:6px 0}
+.score span{color:var(--muted);font-size:14px}
+blockquote{font-size:19px;line-height:1.6}
+blockquote cite{display:block;margin-top:14px;color:var(--muted);font-style:normal;font-size:14px}
+@media(max-width:700px){.review{grid-template-columns:1fr;padding:28px}}
+
+/* contacts */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:24px}
+.cinfo{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:36px;display:grid;gap:26px;align-content:start}
+.cinfo small{color:var(--muted);display:block;font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.cinfo .big{font-family:Unbounded;font-size:24px}
+.map{border-radius:22px;overflow:hidden;border:1px solid var(--line);min-height:380px}
+.map iframe{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(.3) contrast(1.05)}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.fab{position:fixed;right:18px;bottom:18px;z-index:30;display:none;background:var(--accent);color:#111;width:58px;height:58px;border-radius:50%;place-items:center;font-size:24px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+@media(max-width:860px){.fab{display:grid}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo"><i>P</i>ПРО СТО АВТО</a>
+    <ul>
+      <li><a href="#services">Послуги</a></li>
+      <li><a href="#why">Чому ми</a></li>
+      <li><a href="#gallery">Фото</a></li>
+      <li><a href="#contacts">Контакти</a></li>
+    </ul>
+    <a class="phone" href="tel:+380506911562">050 691 15 62</a>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <img src="img/p4.jpg" alt="BMW на стенді розвал-сходження 3D">
+  <div class="wrap">
+    <div class="tag">★ 4,6 у Google · 96 відгуків</div>
+    <h1>Автосервіс у Чернівцях, де <span>їздять рівно</span></h1>
+    <p>Розвал-сходження на 3D-стенді, шиномонтаж, заправка кондиціонерів, ремонт двигуна та турбін. Приїжджайте на Південно-Кільцеву, 2а.</p>
+    <div class="cta">
+      <a class="btn btn-main" href="tel:+380506911562">📞 Записатися</a>
+      <a class="btn btn-ghost" href="#services">Наші послуги →</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>3D</b><span>стенд розвал-сходження</span></div>
+    <div class="stat"><b>4,6★</b><span>рейтинг у Google Maps</span></div>
+    <div class="stat"><b>25 хв</b><span>заправка кондиціонера</span></div>
+    <div class="stat"><b>до 19:00</b><span>працюємо щодня*</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="kicker">Послуги</div><h2>Все для вашого авто в одному місці</h2></div>
+      <p>Від сезонної заміни шин до капітального ремонту головки блоку. Точну вартість скажемо після огляду — телефонуйте.</p>
+    </div>
+    <div class="services">
+      <div class="svc">
+        <div class="ph"><img src="img/p8.jpg" alt="Audi A6 на стенді розвал-сходження"></div>
+        <div class="tx"><h3>Розвал-сходження 3D</h3><p>Точне налаштування кутів коліс на сучасному 3D-стенді — авто не тягне вбік, гума не з'їдається.</p>
+          <ul><li>Легкові та позашляховики</li><li>Роздруківка результатів</li></ul></div>
+      </div>
+      <div class="svc">
+        <div class="ph"><img src="img/p5.jpg" alt="Шиномонтаж" style="object-position:center 30%"></div>
+        <div class="tx"><h3>Шиномонтаж</h3><p>Сезонна заміна, балансування, ремонт проколів. Працюємо з великими дисками.</p>
+          <ul><li>Балансування коліс</li><li>Ремонт проколів</li></ul></div>
+      </div>
+      <div class="svc">
+        <div class="ph"><img src="img/p6.jpg" alt="Ford F-150 у боксі"></div>
+        <div class="tx"><h3>Кондиціонери</h3><p>Діагностика системи, заправка фреоном з маслом на автоматичній станції. Близько 25 хвилин.</p>
+          <ul><li>Пошук витоків</li><li>Ремонт компресора</li></ul></div>
+      </div>
+      <div class="svc">
+        <div class="ph"><img src="img/p2.jpg" alt="Відремонтована головка блоку циліндрів"></div>
+        <div class="tx"><h3>Ремонт двигуна</h3><p>Ремонт головки блоку циліндрів, заміна прокладок, клапанів, ГРМ.</p>
+          <ul><li>Ремонт ГБЦ</li><li>Заміна ременя / ланцюга ГРМ</li></ul></div>
+      </div>
+      <div class="svc">
+        <div class="ph"><img src="img/p3.jpg" alt="Турбіна Garrett після ремонту"></div>
+        <div class="tx"><h3>Турбіни</h3><p>Діагностика, зняття та встановлення турбокомпресорів. Оригінальні фільтри MAHLE, SOFIMA.</p>
+          <ul><li>Заміна турбіни</li><li>Заміна масла та фільтрів</li></ul></div>
+      </div>
+      <div class="svc">
+        <div class="ph"><img src="img/p10.jpg" alt="Range Rover на стенді"></div>
+        <div class="tx"><h3>Ходова та ТО</h3><p>Діагностика підвіски, заміна амортизаторів, важелів, планове техобслуговування.</p>
+          <ul><li>Діагностика ходової</li><li>Планове ТО</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why">
+  <div class="wrap why-grid">
+    <div class="why-img"><img src="img/p1.jpg" alt="Jeep Wrangler на стенді"></div>
+    <div>
+      <div class="kicker">Чому ми</div>
+      <h2 style="font-size:clamp(28px,3.6vw,42px)">Чесний сервіс без зайвих витрат</h2>
+      <div class="points">
+        <div class="pt"><i>01</i><div><h3>Сучасне обладнання</h3><p>3D-стенд, автоматична станція для кондиціонерів, власний шиномонтаж.</p></div></div>
+        <div class="pt"><i>02</i><div><h3>Приймаємо навіть у суботу ввечері</h3><p>Клієнти пишуть, що ми брали авто, коли інші вже зачинились.</p></div></div>
+        <div class="pt"><i>03</i><div><h3>Будь-які марки</h3><p>BMW, Audi, Range Rover, Jeep, Ford, MINI — і ваше авто теж.</p></div></div>
+        <div class="pt"><i>04</i><div><h3>Зручно доїхати</h3><p>Південно-Кільцева, 2а — біля пляжу «Green», є місце для паркування.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="head"><div><div class="kicker">Фото</div><h2>Наша робота</h2></div></div>
+    <div class="gallery">
+      <img class="tall" src="img/p7.jpg" alt="Будівля шиномонтажу" style="object-position:center">
+      <img class="wide" src="img/p4.jpg" alt="BMW">
+      <img src="img/p9.jpg" alt="MINI Countryman">
+      <img src="img/p3.jpg" alt="Турбіна">
+      <img src="img/p8.jpg" alt="Audi A6">
+      <img class="wide" src="img/p6.jpg" alt="Ford F-150">
+      <img src="img/p2.jpg" alt="ГБЦ">
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="review">
+      <div class="score"><b>4,6</b><div>★★★★★</div><span>96 відгуків у Google</span></div>
+      <blockquote>«Підключили апарат, зробили діагностику, заправили з маслом. Все автоматично, на все про все — 25 хвилин. Перевірили — все працює. Рекомендую.»
+        <cite>— відгук клієнта з Google Maps</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><div><div class="kicker">Контакти</div><h2>Приїжджайте або телефонуйте</h2></div></div>
+    <div class="contact">
+      <div class="cinfo">
+        <div><small>Телефон</small><a class="big" href="tel:+380506911562">050 691 15 62</a></div>
+        <div><small>Адреса</small><div style="font-size:18px;font-weight:600">вул. Південно-Кільцева, 2а<br>Чернівці, 58032</div></div>
+        <div><small>Графік</small><div style="font-size:18px;font-weight:600">Щодня до 19:00*</div></div>
+        <div class="cta">
+          <a class="btn btn-main" href="tel:+380506911562">Подзвонити</a>
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=48.2516439,25.9393741">Маршрут</a>
+        </div>
+      </div>
+      <div class="map"><iframe loading="lazy" title="Карта" src="https://maps.google.com/maps?q=48.2516439,25.9393741&z=16&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>© 2026 ПРО СТО АВТО, Чернівці</span><span>* графік уточнюйте за телефоном</span></div>
+</footer>
+
+<a class="fab" href="tel:+380506911562" aria-label="Подзвонити">📞</a>
+<div class="lb" id="lb"><img alt=""></div>
+<script>
+const lb=document.getElementById('lb');
+document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.firstElementChild.src=i.src;lb.classList.add('on')});
+lb.onclick=()=>lb.classList.remove('on');
+</script>
+</body>
+</html>
